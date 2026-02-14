@@ -1,0 +1,43 @@
+.pdfjs-viewer {
+    border: 1px solid #ddd;
+    margin: 1rem 0;
+    background: #fff;
+}
+
+.pdfjs-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.pdfjs-btn {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.pdfjs-page {
+    font-size: 0.875rem;
+    color: #333;
+}
+
+.pdfjs-title {
+    margin-left: auto;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.pdfjs-canvas-wrapper {
+    overflow: auto;
+    text-align: center;
+}
+
+.pdfjs-error {
+    color: #a00;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}

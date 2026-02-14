@@ -1,10 +1,27 @@
 <?php
 $itemMedia = $resource->media();
-$sortedMedia = $this->sortMedia($itemMedia);
+$pdfMedia = [];
+$nonPdfMedia = [];
+foreach ($itemMedia as $media) {
+    if ($media->mediaType() === 'application/pdf') {
+        $pdfMedia[] = $media;
+    } else {
+        $nonPdfMedia[] = $media;
+    }
+}
+
+$sortedMedia = $this->sortMedia($nonPdfMedia);
 $lightMedia = (isset($sortedMedia['lightMedia'])) ? $sortedMedia['lightMedia'] : null;
 $otherMedia = (isset($sortedMedia['otherMedia'])) ? $sortedMedia['otherMedia'] : null;
 ?>
 <?php echo $this->lightGalleryOutput($lightMedia); ?>
+<?php if (!empty($pdfMedia)): ?>
+<div class="media-embeds pdf-embeds">
+    <?php foreach ($pdfMedia as $media): ?>
+    <?php echo $media->render(); ?>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
 <?php if (isset($otherMedia) && (count($otherMedia) > 0)): ?>
 <dl id="other-media">
     <div class="property">

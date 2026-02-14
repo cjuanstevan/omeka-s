@@ -83,7 +83,7 @@ class LightGalleryOutput extends AbstractHelper
             }
 
             $attribs['data-thumb'] = $media->thumbnailDisplayUrl('medium');
-            $attribs['data-download-url'] = $downloadUrl;
+            $attribs['data-download-url'] = $mediaType === 'application/pdf' ? 'false' : $downloadUrl;
             $attribs['class'] = 'media resource';
             $attribs['title'] = $media->altText();
 

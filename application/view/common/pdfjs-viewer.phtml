@@ -1,0 +1,23 @@
+<?php
+$source = $media->originalUrl() ?: $media->source();
+$label = $media->displayTitle();
+$containerId = 'pdfjs-' . $media->id();
+$scale = $options['scale'] ?? 1.25;
+?>
+<div id="<?php echo $this->escapeHtmlAttr($containerId); ?>"
+    class="pdfjs-viewer"
+    data-src="<?php echo $this->escapeHtmlAttr($source); ?>"
+    data-scale="<?php echo $this->escapeHtmlAttr($scale); ?>">
+    <div class="pdfjs-toolbar">
+        <button type="button" class="pdfjs-btn" data-pdfjs-prev aria-label="Previous page">Prev</button>
+        <span class="pdfjs-page">
+            <span data-pdfjs-page-num>1</span> / <span data-pdfjs-page-count>?</span>
+        </span>
+        <button type="button" class="pdfjs-btn" data-pdfjs-next aria-label="Next page">Next</button>
+        <span class="pdfjs-title"><?php echo $this->escapeHtml($label); ?></span>
+    </div>
+    <div class="pdfjs-canvas-wrapper">
+        <canvas></canvas>
+    </div>
+    <div class="pdfjs-error" data-pdfjs-error aria-live="polite"></div>
+</div>

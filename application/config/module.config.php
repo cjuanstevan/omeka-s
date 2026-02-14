@@ -874,8 +874,10 @@ return [
             'thumbnail' => Media\FileRenderer\ThumbnailRenderer::class,
             'audio' => Media\FileRenderer\AudioRenderer::class,
             'video' => Media\FileRenderer\VideoRenderer::class,
+            'pdf' => Media\FileRenderer\PdfRenderer::class,
         ],
         'aliases' => [
+            'application/pdf' => 'pdf',
             'audio/ogg' => 'audio',
             'audio/x-aac' => 'audio',
             'audio/mpeg' => 'audio',
@@ -889,6 +891,7 @@ return [
             'video/ogg' => 'video',
             'video/webm' => 'video',
             'mp3' => 'audio',
+            'pdf' => 'pdf',
         ],
     ],
     'oembed' => [

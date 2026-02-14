@@ -2,7 +2,9 @@
 $media = $resource;
 $sortedMedia = $this->sortMedia([$media]);
 
-if (isset($sortedMedia['lightMedia'])):
+if ($media->mediaType() === 'application/pdf'):
+    echo $media->render();
+elseif (isset($sortedMedia['lightMedia'])):
     echo $this->lightGalleryOutput($sortedMedia['lightMedia']);
 else:
     echo $this->partial('common/resource-page-block-layout/media-render');

@@ -7,6 +7,7 @@
             dynamic: false,
             hash: true,
             closable: false,
+            download: false,
             thumbnail: true,
             selector: '.media.resource',
             showMaximizeIcon: true,
